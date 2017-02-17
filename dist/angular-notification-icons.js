@@ -82,7 +82,7 @@ var NotificationDirectiveController = function($scope, $animate, $q) {
   };
 
   $scope.$watch(function() { return self.count; }, function() {
-    if (self.visible === false && (self.alwaysShow || self.count > 0)) {
+    if (self.visible === false && (self.alwaysShow || self.count !== 0)) {
       appear();
     } else if (!self.alwaysShow && self.visible === true && self.count <= 0) {
       // Only clear if we're not always showing
